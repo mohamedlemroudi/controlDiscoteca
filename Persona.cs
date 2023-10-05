@@ -16,6 +16,8 @@ namespace AppDiscoteca
         private int Id { get; }
 
         // Constructor
+        public Persona() {}
+
         public Persona(string nom, int tempsCua, int tempsDintra, string urlFoto)
         {
             this.Id = DateTime.Now.Millisecond;
@@ -25,7 +27,7 @@ namespace AppDiscoteca
             this.urlFoto = urlFoto;
         }
 
-        // Metodes GETS
+        // Metodes GETs
         public int getId()
         {
             return Id;
@@ -49,6 +51,28 @@ namespace AppDiscoteca
         public string getUrlFoto()
         {
             return urlFoto;
+        }
+
+
+        // Metodes SETs
+        public void setNom(string paramNom)
+        {
+            this.nom = paramNom;
+        }
+
+        public void setTempsCua(int paramTempsCua)
+        {
+            this.tempsCua = paramTempsCua;
+        }
+
+        public void setTempsDisco(int paramTempsDintra)
+        {
+            this.tempsDintra = paramTempsDintra;
+        }
+
+        public void setUrlFoto(string paramUrlFoto)
+        {
+            this.urlFoto = paramUrlFoto;
         }
     }
 }

@@ -12,7 +12,7 @@
         <Label x:Name="lbPersonaCua" Content="Persona esperan en la cua:" HorizontalAlignment="Left" Margin="46,90,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbPersonaCua" HorizontalAlignment="Left" Margin="203,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35"/>
         <TextBox x:Name="tbPersonaDintra" HorizontalAlignment="Left" Margin="204,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34"/>
-        <Button x:Name="btnAfegir" Content="Afegir" HorizontalAlignment="Left" Height="22" Margin="563,137,0,0" VerticalAlignment="Top" Width="168" Click="Button_Click"/>
+        <Button x:Name="btnAfegir" Content="Afegir" HorizontalAlignment="Left" Height="22" Margin="563,137,0,0" VerticalAlignment="Top" Width="126" Click="Button_Click"/>
         <Label x:Name="lbCua" Content="Cua:" HorizontalAlignment="Left" Margin="82,191,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbDintre" Content="Dintre:" HorizontalAlignment="Left" Margin="288,191,0,0" VerticalAlignment="Top"/>
         <ListView x:Name="listaCua" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="98,222,536,47" RenderTransformOrigin="0.5,0.5">
@@ -33,6 +33,13 @@
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Image Width="30" Height="30" Source="C:\Users\moha\source\repos\AppDiscoteca\Assets\close.png" />
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="btnEditItem" Click="editarItem" Width="30" Height="30">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Image Width="30" Height="30" Source="C:\Users\moha\source\repos\AppDiscoteca\Assets\perfil.png" />
                                 </ControlTemplate>
                             </Button.Template>
                         </Button>
@@ -95,7 +102,13 @@
         <Label x:Name="lbPersonaNom" Content="Nom persona:" HorizontalAlignment="Left" Margin="48,54,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbNomPersona" HorizontalAlignment="Left" Margin="150,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lbUrlFoto" Content="Url foto perfil:" HorizontalAlignment="Left" Margin="48,160,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbUrlFoto" HorizontalAlignment="Left" Margin="136,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="326"/>
-
+        <TextBox x:Name="tbUrlFoto" HorizontalAlignment="Left" Margin="136,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" Height="22"/>
+        <Button x:Name="btnFile" HorizontalAlignment="Center" Margin="0,163,0,0" VerticalAlignment="Top" Height="23" Width="66" Click="btnFile_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="C:\Users\moha\source\repos\AppDiscoteca\Assets\carpeta.png" Width="20" Height="20" />
+                <TextBlock Text=" File" VerticalAlignment="Center" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="proba" Content="+" HorizontalAlignment="Left" Height="22" Margin="691,137,0,0" VerticalAlignment="Top" Width="40" Click="proba_Click"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -178,6 +179,79 @@ namespace AppDiscoteca
             {
                 // Elimina el elemento seleccionado de la lista
                 listaHistoric.Items.Remove(listaHistoric.SelectedItem);
+            }
+        }
+
+        // Editar Item
+        private void editarItem(object sender, RoutedEventArgs e)
+        {
+            string nomPersona = tbNomPersona.Text;
+            int tempsCua = Int32.Parse(tbPersonaCua.Text);
+            int tempsDintra = Int32.Parse(tbPersonaDintra.Text);
+            string urlFoto = tbUrlFoto.Text;
+
+            var persona = new Persona(nomPersona, tempsCua, tempsDintra, urlFoto);
+
+            Perfil perfil1 = new Perfil();
+            perfil1.Dades = persona;
+
+            bool? result = perfil1.ShowDialog();
+            if (result.HasValue && result.Value)
+            {
+                //string nomPersona = perfil1.Dades.getNom();
+                //int tempsCua = perfil1.Dades.getTempsCua();
+                //int tempsDintra = perfil1.Dades.getTempsDintra();
+                //string urlFoto = perfil1.Dades.getUrlFoto();
+
+                //var persona = new Persona(nomPersona, tempsCua, tempsDintra, urlFoto);
+                //afegirPersonaDintre(persona);
+            }
+            else
+            {
+                MessageBox.Show("Has cancel·lat", "Afegir", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void btnFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Configura el diálogo
+            openFileDialog.Title = "Seleccionar un archivo";
+            openFileDialog.Filter = "Archivos de texto (*.png)|*.jpg|Todos los archivos (*.jpg*)|*.png*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            // Muestra el diálogo y verifica si el usuario hizo una selección
+            bool? result = openFileDialog.ShowDialog();
+
+            if (result == true)
+            {
+                // Obtiene la ruta del archivo seleccionado
+                string archivoSeleccionado = openFileDialog.FileName;
+
+                // Haz algo con el archivo seleccionado, como mostrar su ruta en un TextBox
+                tbUrlFoto.Text = archivoSeleccionado;
+            }
+        }
+
+        private void proba_Click(object sender, RoutedEventArgs e)
+        {
+            Perfil perfil1 = new Perfil();
+            bool? result = perfil1.ShowDialog();
+            if(result.HasValue && result.Value)
+            {
+                string nomPersona = perfil1.Dades.getNom();
+                int tempsCua = perfil1.Dades.getTempsCua();
+                int tempsDintra = perfil1.Dades.getTempsDintra();
+                string urlFoto = perfil1.Dades.getUrlFoto();
+
+                var persona = new Persona(nomPersona, tempsCua, tempsDintra, urlFoto);
+                afegirPersonaDintre(persona);
+            }
+            else
+            {
+                MessageBox.Show("Has cancel·lat", "Afegir", MessageBoxButton.OK, MessageBoxImage.Exclamation);    
             }
         }
     }

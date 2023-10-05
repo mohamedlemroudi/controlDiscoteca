@@ -19,3 +19,5 @@ C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\refint\AppDisco
 C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\AppDiscoteca.pdb
 C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\AppDiscoteca.genruntimeconfig.cache
 C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\ref\AppDiscoteca.dll
+C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\Perfil.g.cs
+C:\Users\moha\source\repos\AppDiscoteca\obj\Debug\net6.0-windows\Perfil.baml
